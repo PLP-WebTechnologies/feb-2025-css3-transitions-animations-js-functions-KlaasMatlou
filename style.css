@@ -1,0 +1,112 @@
+body {
+    background: linear-gradient(to right, #fceabb, #f8b500);
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 30px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  .theme-toggle{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    
+  }
+
+  body.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+  }
+
+  .container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .section-card {
+    flex: 1 1 30%;
+    min-width: 300px;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .section-card:nth-child(1) {
+    background-color: #d4fcd4;
+    color: #000;
+  }
+  .section-card:nth-child(2) {
+    background-color: #d4e8fc;
+    color: #000;
+  }
+  .section-card:nth-child(3) {
+    background-color: #fcd4d4;
+    color: #000;
+  }
+
+  body.dark-mode .section-card {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+  }
+
+  .section-card:nth-child(1):hover {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+
+  .section-card:nth-child(2):hover {
+    transform: scale(1.05);
+  }
+
+  .section-card:nth-child(3):hover {
+    transform: rotate(1deg) scale(1.03);
+  }
+
+  .btn-animate {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-animate.clicked {
+    animation: rotate-slow 2s linear;
+  }
+
+  .btn-animate:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffc107;
+  }
+
+
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-pulse {
+    animation: pulse 0.6s ease;
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  @media (max-width: 768px) {
+    .container-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
